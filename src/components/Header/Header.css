@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  width: 320px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.title {
+  font-size: 1.2em;
+  margin: 0;
+  background-color: var(--light);
+}
+
+@media (max-width: 1165px) {
+  .title {
+    font-size: 17px;
+  }
+  .logo {
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.2em;
+  }
+  .logo {
+    height: 30px;
+  }
+}

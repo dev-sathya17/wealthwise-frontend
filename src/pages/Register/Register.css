@@ -1,0 +1,171 @@
+.reg-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-title {
+  margin-top: 15px;
+}
+
+.form-container {
+  width: 700px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 50px 0;
+  color: var(--dark);
+  box-shadow: 8px 5px 5px rgba(132, 10, 255, 0.1);
+}
+
+.form-container > p,
+h2,
+.highlight,
+.input-container,
+.form,
+.row,
+label {
+  background-color: var(--white);
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.highlight-title {
+  font-weight: 700;
+}
+
+.error {
+  background-color: var(--white);
+  color: var(--red);
+  font-size: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 35px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.input-container {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  margin-left: 10px;
+  flex-direction: column;
+  height: 85px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding-left: 7px;
+}
+
+.input:focus {
+  border: none;
+  border: 2px solid var(--accent);
+}
+
+.link {
+  color: var(--blue);
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: var(--white);
+}
+
+.align-center {
+  text-align: center;
+}
+
+.login-nav {
+  background-color: var(--white);
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  background-color: var(--accent);
+  color: var(--light);
+  outline: none;
+  border: none;
+  padding: 4px;
+  border-radius: 5px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  width: 40%;
+  align-self: center;
+  cursor: pointer;
+  font-size: 17px;
+  transition: 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--accent-dark);
+}
+
+.disabled-button {
+  background-color: var(--gray-dark);
+  color: var(--white);
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 930px) {
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-container {
+    width: 90%;
+  }
+  .submit-button {
+    width: 70%;
+  }
+  .radio-wrapper {
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .radio-container {
+    gap: 1px;
+  }
+  .input-container {
+    margin-left: 0;
+  }
+}
