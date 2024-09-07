@@ -9,6 +9,8 @@ import userLoader from "./loaders/user.loader";
 import AuthenticatedRoute from "./routes/AuthenticatedRoute";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Profile from "./pages/Profile/Profile";
+import Users from "./pages/Users/Users";
+import adminLoader from "./loaders/admin.loader";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -66,6 +68,11 @@ const router = createBrowserRouter([
             path: "dashboard",
             element: <AdminDashboard />,
             loader: userLoader.checkAuth,
+          },
+          {
+            path: "users",
+            element: <Users />,
+            loader: adminLoader.fetchAllUsers,
           },
         ],
       },

@@ -11,6 +11,7 @@ import {
   signOutUserStart,
   signOutUserSuccess,
 } from "../../features/user/userSlice";
+import BACKEND_URL from "../../utils/config";
 const Navbar = ({ role, active }) => {
   const [view, setView] = useState(false);
   const navigate = useNavigate();
@@ -77,10 +78,7 @@ const Navbar = ({ role, active }) => {
         </ul>
         <div className="nav-footer">
           <img
-            src={`http://localhost:3000/${currentUser.image.replace(
-              "\\",
-              "/"
-            )}`}
+            src={`${BACKEND_URL}/${currentUser.image.replace("\\", "/")}`}
             alt="profile picture"
             className={`nav-profile ${
               active === "profile" ? "nav-profile-active" : ""
@@ -125,10 +123,7 @@ const Navbar = ({ role, active }) => {
           </ul>
           <div className="nav-footer-mob">
             <img
-              src={`http://localhost:3000/${currentUser.image.replace(
-                "\\",
-                "/"
-              )}`}
+              src={`${BACKEND_URL}/${currentUser.image.replace("\\", "/")}`}
               alt="profile picture"
               className={`nav-profile ${active ? "nav-profile-active" : ""}`}
               onClick={handleProfileNavigation}
@@ -138,7 +133,7 @@ const Navbar = ({ role, active }) => {
               onClick={handleClick}
               disabled={loading}
             >
-              {loading ? "Logging Out..." : "Logout"}
+              Logout
             </button>
           </div>
         </div>

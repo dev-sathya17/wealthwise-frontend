@@ -14,6 +14,7 @@ import {
   updateUserStart,
   updateUserSuccess,
 } from "../../features/user/userSlice";
+import BACKEND_URL from "../../utils/config";
 
 const Profile = () => {
   const { user } = useLoaderData();
@@ -39,7 +40,7 @@ const Profile = () => {
   const handleUpdate = (updatedUser) => {
     dispatch(updateUserStart());
     userServices
-      .updateUser(user._id, updatedUser)
+      .updateUser(user.userId, updatedUser)
       .then((response) => {
         if (response.status === 200) {
           alert(response.data.message);
@@ -65,7 +66,7 @@ const Profile = () => {
     if (choice) {
       dispatch(deleteUserStart());
       userServices
-        .deleteUser(user._id)
+        .deleteUser(user.user.userId)
         .then((response) => {
           if (response.status === 200) {
             alert(response.data.message);
@@ -108,7 +109,7 @@ const Profile = () => {
     data.append("image", image);
     dispatch(updateUserStart());
     userServices
-      .uploadImage(data, user._id)
+      .uploadImage(data, user.userId)
       .then((response) => {
         if (response.status === 200) {
           alert(response.data.message);
@@ -137,7 +138,7 @@ const Profile = () => {
                 <img src={imageUrl} alt="Profile" />
               ) : (
                 <img
-                  src={`http://localhost:3000/${user.image}`}
+                  src={`${BACKEND_URL}/${user.image}`}
                   alt={user.firstName}
                 />
               )}

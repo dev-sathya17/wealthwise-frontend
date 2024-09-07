@@ -65,9 +65,11 @@ const userServices = {
   },
   updateUser: async (id, data) => {
     try {
+      console.log(id, data);
       const response = await protectedInstance.put(`/users/update/${id}`, data);
       return { data: response.data, status: response.status };
     } catch (error) {
+      console.log(error);
       return error.response.data.message;
     }
   },

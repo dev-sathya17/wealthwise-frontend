@@ -38,7 +38,9 @@ const userSlice = createSlice({
       state.loading = true;
     },
     deleteUserSuccess: (state) => {
-      state.currentUser = null;
+      if (state.currentUser.role !== "admin") {
+        state.currentUser = null;
+      }
       state.loading = false;
       state.error = null;
     },
