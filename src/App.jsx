@@ -10,8 +10,9 @@ import AuthenticatedRoute from "./routes/AuthenticatedRoute";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Profile from "./pages/Profile/Profile";
 import Users from "./pages/Users/Users";
-import adminLoader from "./loaders/admin.loader";
 import "./App.css";
+import Categories from "./pages/Categories/Categories";
+import adminLoader from "./loaders/admin.loader";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
             path: "users",
             element: <Users />,
             loader: adminLoader.fetchAllUsers,
+          },
+          {
+            path: "categories",
+            element: <Categories />,
+            loader: adminLoader.fetchCategories,
           },
         ],
       },

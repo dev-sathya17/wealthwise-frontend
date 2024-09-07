@@ -1,0 +1,80 @@
+.cat-container {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.cat-search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cat-search-input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+}
+
+.cat-search-icon {
+  position: absolute;
+  right: 15px;
+  color: var(--accent);
+}
+
+.cat-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cat-category-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cat-card-content {
+  display: flex;
+  background-color: var(--white);
+  align-items: center;
+}
+
+.cat-card-name {
+  margin-left: 10px;
+  background-color: var(--white);
+}
+
+.cat-edit-input {
+  margin-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 90%;
+  background-color: var(--white);
+}
+
+.cat-card-actions {
+  display: flex;
+  gap: 10px;
+  background-color: var(--white);
+}
+
+.cat-icon {
+  background-color: var(--white);
+}
+
+.cat-action-icon {
+  background-color: var(--white);
+  cursor: pointer;
+  color: var(--red);
+}

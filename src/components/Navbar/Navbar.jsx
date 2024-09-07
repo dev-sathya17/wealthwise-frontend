@@ -67,9 +67,11 @@ const Navbar = ({ role, active }) => {
           ) : (
             <></>
           )}
-          <li className={`nav-item ${active === "tasks" ? "active" : ""}`}>
+          <li className={`nav-item ${active === "cat" ? "active" : ""}`}>
             <NavLink
-              to={role === "admin" ? `/${role}/tasks` : `/${role}/workspace`}
+              to={
+                role === "admin" ? `/${role}/categories` : `/${role}/workspace`
+              }
               className="nav-link"
             >
               {role === "user" ? "My Finance" : "Categories"}

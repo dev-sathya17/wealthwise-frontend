@@ -1,0 +1,44 @@
+.inc-icon,
+.exp-icon {
+  font-size: 20px;
+  background-color: var(--white);
+}
+.groceries {
+  color: var(--accent);
+}
+.health {
+  color: var(--red);
+}
+.food {
+  color: var(--gray);
+}
+.salary {
+  color: var(--gray-dark);
+}
+.investments {
+  color: var(--blue);
+}
+.pension,
+.royalties,
+.freelance {
+  color: var(--accent-dark);
+}
+.debts {
+  color: red;
+}
+
+.rental {
+  color: var(--sky);
+}
+
+.rent {
+  color: cyan;
+}
+
+.travel {
+  color: darkblue;
+}
+
+.education {
+  color: magenta;
+}
