@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaPencilAlt, FaTrash, FaSave, FaSearch } from "react-icons/fa";
+import { FaTrash, FaSearch } from "react-icons/fa";
 import "./Categories.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
@@ -19,11 +19,6 @@ const Categories = () => {
   const handleSearch = (e) => setSearchTerm(e.target.value.toLowerCase());
 
   const handleDelete = (id, type, name) => {
-    // setCategories((prevCategories) =>
-    //   prevCategories.filter(
-    //     (cat) => cat.incomeCategoryId !== id && cat.expenseCategoryId !== id
-    //   )
-    // );
     const choice = confirm(
       `Are you sure you want to delete '${name}' Category?`
     );

@@ -92,7 +92,7 @@ const Navbar = ({ role, active }) => {
             onClick={handleClick}
             disabled={loading}
           >
-            {loading ? "Logging Out..." : "Logout"}
+            Logout
           </button>
         </div>
       </nav>
@@ -117,11 +117,15 @@ const Navbar = ({ role, active }) => {
             ) : (
               <></>
             )}
-            <li className="nav-item">
-              <NavLink className="nav-link" to={`/${role}/tasks`}>
-                Tasks
-              </NavLink>
-            </li>
+            {role === "admin" ? (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/admin/categories">
+                  Categories
+                </NavLink>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
           <div className="nav-footer-mob">
             <img

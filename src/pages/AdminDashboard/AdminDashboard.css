@@ -1,0 +1,184 @@
+.adm-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.adm-pill {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  gap: 20px;
+  border-radius: 50px;
+}
+
+.adm-pill > h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  background-color: var(--white);
+}
+
+.adm-pill > .income-icon,
+.adm-pill > .expense-icon {
+  background-color: var(--white);
+}
+
+.total-user-icon {
+  font-size: 30px;
+  background-color: var(--white);
+  color: var(--accent);
+}
+
+.table-container {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.adm-search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  padding: 0.2rem;
+  width: 100%;
+  background-color: var(--white);
+  max-width: 500px;
+}
+
+.adm-search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 7px;
+  padding: 0.5rem;
+  background-color: var(--white);
+  border-radius: 40px;
+}
+
+.adm-search-icon {
+  color: var(--accent);
+  background-color: var(--white);
+  margin: 0 0.5rem;
+}
+
+.adm-sort-button {
+  background-color: var(--accent-dark);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  text-align: left;
+  word-break: break-word;
+}
+
+table th {
+  background-color: #f8f9fa;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.income-icon {
+  color: var(--green);
+}
+
+.category-icon {
+  margin-top: 5px;
+}
+
+.table-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: center;
+}
+
+.expense-icon {
+  color: var(--red);
+}
+
+.income-icon,
+.expense-icon {
+  font-size: 24px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: var(--accent-dark);
+}
+
+.pagination button:hover {
+  background-color: var(--accent-dark);
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 0.5rem;
+  }
+
+  .adm-search-bar {
+    width: 100%;
+    max-width: none; /* Remove max-width on smaller screens */
+  }
+
+  table {
+    font-size: 0.875rem;
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+  }
+
+  table th,
+  table td {
+    padding: 0.5rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+  }
+}
