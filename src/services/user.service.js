@@ -106,6 +106,32 @@ const userServices = {
       return error.response.data.message;
     }
   },
+  getTotalIncomeExpense: async () => {
+    try {
+      const response = await protectedInstance.get("/users/total");
+      return {
+        status: 200,
+        totalIncome: response.data.totalIncome,
+        totalExpense: response.data.totalExpense,
+      };
+    } catch (error) {
+      console.error(error);
+      throw new Error("Failed to fetch income-expenses");
+    }
+  },
+  getTotalIncomeExpenseByCategory: async () => {
+    try {
+      const response = await protectedInstance.get("/users/total/category");
+      return {
+        status: 200,
+        incomeData: response.data.incomeData,
+        expenseData: response.data.expenseData,
+      };
+    } catch (error) {
+      console.error(error);
+      throw new Error("Failed to fetch income-expenses by category");
+    }
+  },
 };
 
 export default userServices;
