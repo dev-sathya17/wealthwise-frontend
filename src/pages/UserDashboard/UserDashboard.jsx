@@ -35,7 +35,6 @@ const UserDashboard = () => {
       .getTotalIncomeExpenseByCategory()
       .then(({ incomeData, status, expenseData }) => {
         if (status === 200) {
-          console.log(incomeData, expenseData);
           setIncomeByCategory(incomeData);
           setExpenseByCategory(expenseData);
         }

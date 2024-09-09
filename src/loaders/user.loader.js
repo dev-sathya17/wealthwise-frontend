@@ -25,6 +25,17 @@ const userLoader = {
       };
     }
   },
+  getUserSettings: async () => {
+    try {
+      const response = await userServices.getSettings();
+      return { data: response.data, status: response.status };
+    } catch (error) {
+      return {
+        error: error.response.data.message,
+        status: error.response.status,
+      };
+    }
+  },
 };
 
 // Exporting the user loader object

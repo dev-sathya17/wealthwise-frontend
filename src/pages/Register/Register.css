@@ -119,7 +119,7 @@ label {
 
 .submit-button {
   background-color: var(--accent);
-  color: var(--light);
+  color: var(--my-own-gray-background);
   outline: none;
   border: none;
   padding: 4px;

@@ -13,6 +13,11 @@ import Users from "./pages/Users/Users";
 import "./App.css";
 import Categories from "./pages/Categories/Categories";
 import adminLoader from "./loaders/admin.loader";
+import incomesLoader from "./loaders/incomes.loader";
+import expensesLoader from "./loaders/expenses.loader";
+import Incomes from "./pages/Incomes/Incomes";
+import Expenses from "./pages/Expenses/Expenses";
+import Settings from "./pages/Settings/Settings";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +62,21 @@ const router = createBrowserRouter([
             path: "dashboard",
             element: <UserDashboard />,
             loader: userLoader.checkAuth,
+          },
+          {
+            path: "incomes",
+            element: <Incomes />,
+            loader: incomesLoader.fetchIncomes,
+          },
+          {
+            path: "expenses",
+            element: <Expenses />,
+            loader: expensesLoader.fetchExpenses,
+          },
+          {
+            path: "settings",
+            element: <Settings />,
+            loader: userLoader.getUserSettings,
           },
         ],
       },

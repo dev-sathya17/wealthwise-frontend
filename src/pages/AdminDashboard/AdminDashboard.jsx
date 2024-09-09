@@ -98,6 +98,7 @@ const AdminDashboard = () => {
               placeholder="Search..."
               value={searchTerm}
               onChange={handleSearch}
+              className="adm-input"
             />
             <FaSearch className="adm-search-icon" />
           </div>

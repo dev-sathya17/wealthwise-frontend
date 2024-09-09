@@ -67,10 +67,10 @@
   font-size: 14px;
   margin-bottom: 5px;
   color: var(--accent-dark);
-  background-color: var(--light);
+  background-color: var(--my-own-gray-background);
 }
 
-.profile-details input {
+.profile-details .prof-input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -139,7 +139,7 @@
   text-align: left;
 }
 
-.modal input {
+.modal .modal-input {
   width: 100%;
   padding: 8px;
   margin-bottom: 15px;
@@ -174,7 +174,7 @@
     padding: 10px;
   }
 
-  .profile-details input {
+  .profile-details .prof-input {
     padding: 8px;
   }
 

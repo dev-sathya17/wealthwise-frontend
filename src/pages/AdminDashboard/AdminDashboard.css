@@ -59,7 +59,7 @@
   max-width: 500px;
 }
 
-.adm-search-bar input {
+.adm-search-bar .adm-input {
   border: none;
   outline: none;
   width: 100%;

@@ -167,6 +167,7 @@ const Profile = () => {
                 name="name"
                 value={user.name}
                 onChange={handleChange}
+                className="prof-input"
               />
 
               <label htmlFor="email">Email:</label>
@@ -175,6 +176,7 @@ const Profile = () => {
                 name="email"
                 value={user.email}
                 onChange={handleChange}
+                className="prof-input"
               />
 
               <label htmlFor="mobile">Mobile:</label>
@@ -183,6 +185,7 @@ const Profile = () => {
                 name="mobile"
                 value={user.mobile}
                 onChange={handleChange}
+                className="prof-input"
               />
 
               <div className="profile-actions">
@@ -216,6 +219,7 @@ const Profile = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                className="modal-input"
               />
             </label>
             <label>
@@ -225,6 +229,7 @@ const Profile = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                className="modal-input"
               />
             </label>
             <label>
@@ -234,6 +239,7 @@ const Profile = () => {
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleChange}
+                className="modal-input"
               />
             </label>
             <div className="modal-actions">

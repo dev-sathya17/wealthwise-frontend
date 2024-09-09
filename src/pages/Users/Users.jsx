@@ -160,6 +160,7 @@ const Users = () => {
                   name="name"
                   value={editingUser.name}
                   onChange={handleFormChange}
+                  className="usr-input"
                 />
               </label>
               <label>
@@ -169,6 +170,7 @@ const Users = () => {
                   name="email"
                   value={editingUser.email}
                   onChange={handleFormChange}
+                  className="usr-input"
                 />
               </label>
               <label>
@@ -178,6 +180,7 @@ const Users = () => {
                   name="mobile"
                   value={editingUser.mobile}
                   onChange={handleFormChange}
+                  className="usr-input"
                 />
               </label>
               <div className="modal-actions">

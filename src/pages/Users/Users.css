@@ -142,7 +142,7 @@ p {
   text-align: left;
 }
 
-.modal input {
+.modal .usr-input {
   width: 100%;
   padding: 8px;
   margin-bottom: 15px;

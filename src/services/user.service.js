@@ -132,6 +132,15 @@ const userServices = {
       throw new Error("Failed to fetch income-expenses by category");
     }
   },
+  getSettings: async () => {
+    try {
+      const response = await protectedInstance.get("/users/settings");
+      return { data: response.data };
+    } catch (error) {
+      console.error("Error fetching settings:", error);
+      throw error;
+    }
+  },
 };
 
 export default userServices;

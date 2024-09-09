@@ -1,0 +1,62 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  transition: 0.3s ease;
+}
+
+.card-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.card-row:first-child,
+.card-row:last-child {
+  justify-content: space-between;
+}
+
+.card-delete-icon {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.card-edit-icon {
+  color: var(--accent-dark);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.card-icon {
+  background-color: var(--white);
+  font-size: 20px;
+}
+
+.recurring {
+  color: var(--accent);
+}
+
+.amount {
+  color: var(--accent-dark);
+}
+
+.card-text {
+  color: var(--dark);
+  font-size: 16px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    width: 100%;
+  }
+}

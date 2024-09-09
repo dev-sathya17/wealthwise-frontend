@@ -1,6 +1,6 @@
 .usr-dashboard {
   width: 100%;
-  background-color: var(--light);
+  background-color: var(--my-own-gray-background);
   height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
@@ -40,8 +40,8 @@
 
 .usr-dashboard-title {
   font-size: 17px;
-  background-color: var(--light);
-  color: var(--black);
+  background-color: var(--my-own-gray-background);
+  color: var(--dark);
 }
 
 .usr-box {
@@ -53,7 +53,7 @@
 }
 
 .usr-dashboard-value {
-  background-color: var(--light);
+  background-color: var(--my-own-gray-background);
   font-size: 58px;
 }
 

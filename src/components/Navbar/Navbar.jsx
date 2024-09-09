@@ -12,6 +12,7 @@ import {
   signOutUserSuccess,
 } from "../../features/user/userSlice";
 import BACKEND_URL from "../../utils/config";
+import { IoMdSettings } from "react-icons/io";
 const Navbar = ({ role, active }) => {
   const [view, setView] = useState(false);
   const navigate = useNavigate();
@@ -45,6 +46,10 @@ const Navbar = ({ role, active }) => {
     navigate(`/profile`);
   };
 
+  const handleSettingsNavigation = () => {
+    navigate(`/user/settings`);
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -69,16 +74,29 @@ const Navbar = ({ role, active }) => {
           )}
           <li className={`nav-item ${active === "cat" ? "active" : ""}`}>
             <NavLink
-              to={
-                role === "admin" ? `/${role}/categories` : `/${role}/workspace`
-              }
+              to={role === "admin" ? `/${role}/categories` : `/${role}/incomes`}
               className="nav-link"
             >
-              {role === "user" ? "My Finance" : "Categories"}
+              {role === "user" ? "Incomes" : "Categories"}
             </NavLink>
           </li>
+          {role === "user" && (
+            <li className={`nav-item ${active === "cat" ? "active" : ""}`}>
+              <NavLink to="/user/expenses" className="nav-link">
+                Expenses
+              </NavLink>
+            </li>
+          )}
         </ul>
         <div className="nav-footer">
+          {role === "user" && (
+            <IoMdSettings
+              className={`settings-icon ${
+                active === "settings" ? "settings-active" : ""
+              }`}
+              onClick={handleSettingsNavigation}
+            />
+          )}
           <img
             src={`${BACKEND_URL}/${currentUser.image.replace("\\", "/")}`}
             alt="profile picture"
@@ -96,6 +114,7 @@ const Navbar = ({ role, active }) => {
           </button>
         </div>
       </nav>
+      {/* TODO: Have to work on mobile navbar */}
       {view && (
         <div className="nav-mob">
           <div className="nav-mob-header">
@@ -117,17 +136,33 @@ const Navbar = ({ role, active }) => {
             ) : (
               <></>
             )}
-            {role === "admin" ? (
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/categories">
-                  Categories
+            <li className={`nav-item ${active === "cat" ? "active" : ""}`}>
+              <NavLink
+                to={
+                  role === "admin" ? `/${role}/categories` : `/${role}/incomes`
+                }
+                className="nav-link"
+              >
+                {role === "user" ? "Incomes" : "Categories"}
+              </NavLink>
+            </li>
+            {role === "user" && (
+              <li className={`nav-item ${active === "cat" ? "active" : ""}`}>
+                <NavLink to="/user/expenses" className="nav-link">
+                  Expenses
                 </NavLink>
               </li>
-            ) : (
-              <></>
             )}
           </ul>
           <div className="nav-footer-mob">
+            {role === "user" && (
+              <IoMdSettings
+                className={`settings-icon ${
+                  active === "settings" ? "settings-active" : ""
+                }`}
+                onClick={handleSettingsNavigation}
+              />
+            )}
             <img
               src={`${BACKEND_URL}/${currentUser.image.replace("\\", "/")}`}
               alt="profile picture"
