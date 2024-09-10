@@ -18,6 +18,10 @@ import expensesLoader from "./loaders/expenses.loader";
 import Incomes from "./pages/Incomes/Incomes";
 import Expenses from "./pages/Expenses/Expenses";
 import Settings from "./pages/Settings/Settings";
+import IncomeConfig from "./pages/IncomeConfig/IncomeConfig";
+import incomeCategoriesLoader from "./loaders/incomes.categories.loader";
+import ExpenseConfig from "./pages/ExpenseConfig/ExpenseConfig";
+import expenseCategoriesLoader from "./loaders/expense.categories.loader";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +81,16 @@ const router = createBrowserRouter([
             path: "settings",
             element: <Settings />,
             loader: userLoader.getUserSettings,
+          },
+          {
+            path: "income-config",
+            element: <IncomeConfig />,
+            loader: incomeCategoriesLoader.fetchAllCategories,
+          },
+          {
+            path: "expense-config",
+            element: <ExpenseConfig />,
+            loader: expenseCategoriesLoader.fetchAllCategories,
           },
         ],
       },

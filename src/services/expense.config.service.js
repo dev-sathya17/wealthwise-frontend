@@ -28,6 +28,18 @@ const expenseConfigService = {
       return error;
     }
   },
+  initializeExpenseConfig: async (data) => {
+    try {
+      const response = await protectedInstance.post(
+        "/expense-config/initialize",
+        data
+      );
+      return { data: response.data, status: response.status };
+    } catch (error) {
+      console.error("Error initializing expense config:", error);
+      return error;
+    }
+  },
 };
 
 export default expenseConfigService;

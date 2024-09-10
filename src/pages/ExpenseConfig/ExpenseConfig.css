@@ -1,0 +1,120 @@
+.expense-config-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 40px;
+}
+
+.expense-config-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.expense-config-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.config-card {
+  width: 180px;
+  height: 220px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.config-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon-wrapper {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.config-card-title {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+.selected {
+  border: 2px solid #28a745;
+  background-color: #f1fff0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.next-btn {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+  background-color: var(--accent-dark);
+}
+
+.budget-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.budget-amount-input {
+  width: 80px;
+  border: none;
+  padding: 3px;
+  border-radius: 5px;
+  border: 2px solid var(--accent-dark);
+  color: var(--text);
+  background-color: var(--white);
+}
+
+.go-btn {
+  all: unset;
+  border: 1px solid var(--accent-dark);
+  padding: 3px 6px;
+  border-radius: 5px;
+  transition: 0.3s linear;
+}
+
+.go-btn:hover {
+  background-color: var(--accent-dark);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .expense-config-wrapper {
+    height: auto;
+    margin-bottom: 20px;
+  }
+}

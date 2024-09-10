@@ -94,7 +94,6 @@ const Expenses = () => {
   };
 
   const addExpense = () => {
-    console.log(formData);
     expenseService
       .addExpense(formData)
       .then((response) => {
@@ -120,7 +119,6 @@ const Expenses = () => {
   };
 
   const handleEditExpense = () => {
-    console.log(editExpense);
     expenseService
       .updateExpense(editExpense.expenseId, editExpense)
       .then((response) => {
@@ -143,7 +141,6 @@ const Expenses = () => {
   };
 
   const deleteExpense = (id) => {
-    console.log(id);
     expenseService
       .deleteExpense(id)
       .then((response) => {

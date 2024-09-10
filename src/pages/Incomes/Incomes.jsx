@@ -64,7 +64,7 @@ const Incomes = () => {
     setSearchQuery(e.target.value);
 
     const filteredData = data.filter((item) =>
-      item.description.toLowerCase().includes(searchQuery.toLowerCase())
+      item.description.toLowerCase().includes(e.target.value.toLowerCase())
     );
 
     setIncomes(filteredData);

@@ -37,28 +37,32 @@ const Settings = () => {
             console.error(error);
           });
       } else {
-        expenseConfigService
-          .addExpenseConfig({
-            categories: [categoryId],
-          })
-          .then((response) => {
-            if (response.status === 201) {
-              alert(response.data.message);
-              setSettings((prevSettings) => ({
-                ...prevSettings,
-                [type]: prevSettings[type].map((item) =>
-                  item.categoryId === categoryId
-                    ? { ...item, isActive: !item.isActive }
-                    : item
-                ),
-              }));
-            } else {
-              alert(response.data.message);
-            }
-          })
-          .catch((error) => {
-            console.error(error);
-          });
+        const amount = prompt("Enter amount to be allotted for budget:");
+        if (amount) {
+          expenseConfigService
+            .addExpenseConfig({
+              categories: [categoryId],
+              amount,
+            })
+            .then((response) => {
+              if (response.status === 201) {
+                alert(response.data.message);
+                setSettings((prevSettings) => ({
+                  ...prevSettings,
+                  [type]: prevSettings[type].map((item) =>
+                    item.categoryId === categoryId
+                      ? { ...item, isActive: !item.isActive }
+                      : item
+                  ),
+                }));
+              } else {
+                alert(response.data.message);
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }
       }
     } else {
       // Delete config

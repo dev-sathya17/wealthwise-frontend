@@ -52,7 +52,11 @@ const LoginPage = () => {
             formik.resetForm();
             dispatch(signInSuccess(response.data.user));
             if (response.data.user.role === "user") {
-              navigate("/user/dashboard");
+              if (response.data.user.isFirstLogin) {
+                navigate("/user/income-config");
+              } else {
+                navigate("/user/dashboard");
+              }
             } else if (response.data.user.role === "admin") {
               navigate("/admin/dashboard");
             }
