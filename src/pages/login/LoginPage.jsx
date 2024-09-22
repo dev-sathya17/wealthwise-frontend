@@ -8,7 +8,7 @@ import { IoMdEyeOff } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import userServices from "../../services/user.service";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   signInFailure,
   signInStart,
@@ -32,8 +32,8 @@ const validate = (values) => {
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { loading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const formik = useFormik({
@@ -44,9 +44,11 @@ const LoginPage = () => {
     validate,
     onSubmit: () => {
       dispatch(signInStart());
+      setLoading(true);
       userServices
         .login(formik.values)
         .then((response) => {
+          setLoading(false);
           if (response.status === 200) {
             alert(response.data.message);
             formik.resetForm();
@@ -61,11 +63,13 @@ const LoginPage = () => {
               navigate("/admin/dashboard");
             }
           } else {
+            setLoading(false);
             alert(response);
             dispatch(signInFailure());
           }
         })
         .catch((error) => {
+          setLoading(false);
           console.log(error);
           dispatch(signInFailure());
           alert(error.response.data.message);
